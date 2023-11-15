@@ -1,0 +1,69 @@
+{% load static %}
+
+<header>
+    <div class="top-wrap home-head">
+        <div class="container">
+            <div class="row">
+                <div class="col-md col-xl-5 d-flex align-items-center">
+                    <a class="navbar-brand align-items-center" href="{% url 'home:home' %}">
+                        SamDTU AL
+                    </a>
+                </div>
+                <div class="col-md d-flex justify-content-end align-items-center">
+                    <div class="con d-flex">
+                        <div class="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md d-flex align-items-center">
+                    <div class="con d-flex">
+                        <div class="icon"><span class="flaticon-clock"></span></div>
+                        <div class="text">
+                            <span>Dushanba - Shanba</span>
+                            <strong>8:00-17:00</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md d-flex align-items-center">
+                    <div class="con d-flex" style="color: #000">
+                        <div class="icon"><span class="flaticon-telephone"></span></div>
+                        <div class="text">
+                            <span>Telfon raqam</span>
+                            <strong>+998 66 232 23 58</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg  ftco-navbar-light">
+        <div class="container-xl">
+
+            <a href="#" class="btn-custom order-lg-last">Akademik litsey</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home:home' %}">Asosiy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'news:blog' %}">Yangiliklar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home:about' %}">Biz haqimizda</a></li>
+                    <li class="nav-item dropdown me-auto mb-2 mb-lg-0" type="button">
+                        <a class="nav-link btn btn-secondary dropdown-toggle" type="button"
+                           href="{% url 'team:team_view' %}" style="font-size:15px; position: relative; top: 1.7px; text-transform: capitalize">Tuzilma</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'team:team_view' %}#leader">Rahbariyat</a></li>
+                            <li><a class="dropdown-item" href="{% url 'team:team_view' %}#department">Bo'lim</a></li>
+                            <li><a class="dropdown-item" href="{% url 'team:team_view' %}#kafedra">Kafedra</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'quota:quota_view' %}">Qabul</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home:contact' %}">Kontaktlar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

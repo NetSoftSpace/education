@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/yon8.jpg' %});">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 pt-5 mt-5 text-center">
+                <p class="breadcrumbs"><span class="me-2"><a href="{% url 'home:home' %}">Asosiy sahifa<i
+                        class="fa fa-chevron-right"></i></a></span> <span>Qabul<i
+                        class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">Akademik litsey qabul jadvali</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section courses-section ftco-no-pb">
+    <div class="container">
+        <div class="row justify-content-center pb-4">
+            <div class="col-md-10 text-center heading-section" data-aos="fade-up">
+                <span class="subheading">Qabul</span>
+            </div>
+
+            {% for q in quota%}
+                <img src="{{ q.image.url }}">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pt">
+    <div class="row justify-content-center pb-5">
+        <div class="col-md-7 text-center heading-section" data-aos="fade-up" data-aos-duration="1000">
+            <span class="subheading">FAQ</span>
+            <h2 class="mb-3">Ko'p so'raladigan savollar</span></h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8" data-aos="fade-up" data-aos-duration="1000">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Qabul kunlari qachon bo'ladi?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Qabul kunlari har yili<strong>15-iyundan 15-iyulgacha</strong> bo'ladi.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Where It is hidden by default, until the collapse?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use
+                            to style each element. It's also worth noting that just about any HTML can go within the
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How It is hidden by default, until the collapse?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use
+                            to style each element. It's also worth noting that just about any HTML can go within the
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

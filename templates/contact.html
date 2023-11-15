@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/yon8.jpg' %});">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 pt-5 mt-5 text-center">
+                <p class="breadcrumbs"><span class="me-2"><a href="{% url 'home:home' %}">Asosiy sahifa<i
+                        class="fa fa-chevron-right"></i></a></span> <span>Kontakt<i
+                        class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">Kontakt</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row no-gutters justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row g-0">
+                        <div class="col-lg-5">
+                            <h1 align="center" class="mt-6">Bizning manzil <br>xaritada!</h1>
+                        </div>
+                        <div class="col-lg-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6141.132148766326!2d66.98087355869143!3d39.681974600000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d188f4290b7ef%3A0x4989bc6bc98b7f36!2sAcademic%20Lyceum%20at%20the%20Medical%20Institute%20of%20Samarkand!5e0!3m2!1sru!2s!4v1697568419102!5m2!1sru!2s"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="col-lg-7 order-lg-last">
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                <h3>Kontakt</h3>
+                                <p class="mb-4"></p>
+                                <div class="row mb-4">
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 d-flex align-items-start">
+                                            <div class="text">
+                                                <p>
+                                                    <span>Manzil:</span> V Abdullayev ko'chasi 14-uy
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 d-flex align-items-start">
+                                            <div class="text">
+                                                <p><span>Telfon raqam:</span> +998 66 232 23 58</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 d-flex align-items-start">
+                                            <div class="w-100 social-media">
+                                                <p>
+                                                    <span>Facebookdagi sahifamiz!</span>
+                                                    <a href="https://www.facebook.com/groups/267207672254996/">Havola</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

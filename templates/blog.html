@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'images/fon5.jpg' %});">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 pt-5 mt-5 text-center">
+                <p class="breadcrumbs"><span class="me-2"><a href="{% url 'home:home' %}">Asosiy sahifa<i
+                        class="fa fa-chevron-right"></i></a></span> <span>Yangiliklar<i
+                        class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">Yangiliklar</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section" id="blog_lists">
+    <div class="container-xl">
+        <div class="row justify-content-center">
+            {% for blog in blog_list %}
+                <div class="col-md-6 col-lg-4 d-flex">
+                <div class="blog-entry justify-content-end" data-aos="flip-right" data-aos-duration="1000"
+                     data-aos-delay="100">
+                    <a href="{% url 'news:detail' blog.slug %}#blog_detail" class="block-20 img"
+                       style="background-image: url({{ blog.image.url }});">
+                    </a>
+                    <div class="text">
+                        <p class="meta"><span><i class="fa fa-user me-1"></i>{{ blog.category }}</span> <span><i
+                                class="fa fa-calendar me-1"></i>{{ blog.created_at|date:"d-M.Y" }}</span> <span><a href="#">
+                        <h3 class="heading mb-3"><a href="{% url 'news:detail' blog.slug %}#blog_detail">{{ blog.title }}</a></h3>
+                        <p>{{ blog.body|safe|slice:"70" }}...</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% include 'paginator.html' %}
+    </div>
+</section>
+{% endblock %}

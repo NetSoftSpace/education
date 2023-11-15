@@ -1,0 +1,87 @@
+{% load static %}
+
+<footer class="ftco-footer">
+    <div class="container-xl">
+        <div class="row mb-5 justify-content-between">
+            <div class="col-md-6 col-lg">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2 logo d-flex">
+                        <a class="navbar-brand align-items-center" href="index-2.html">
+                            Akademik litsey
+                            <span>SamDTU qoshidagi akademik litsey</span>
+                        </a>
+                    </h2>
+                    <p>
+                        Barcha huquqlar himoyalangan. Saytdagi barcha huquqlar O'zbekiston Respublikasi qonunlariga,
+                        shu jumladan mualliflik huquqi va turdosh huquqlarga muvofiq himoya qilinadi.
+                    </p>
+<!--                    <ul class="ftco-footer-social list-unstyled mt-2">-->
+<!--                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>-->
+<!--                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>-->
+<!--                        <li><a href="#"><span class="fa fa-instagram"></span></a></li>-->
+<!--                    </ul>-->
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-2">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Bo'limlar</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'home:about' %}"><span class="ion ion-ios-arrow-round-forward me-2"></span>Biz haqimizda</a></li>
+                        <li><a href="{% url 'news:blog' %}"><span class="ion ion-ios-arrow-round-forward me-2"></span>Yangiliklar</a></li>
+                        <li><a href="{% url 'team:team_view' %}"><span class="ion ion-ios-arrow-round-forward me-2"></span>Jamoa</a></li>
+                        <li><a href="{% url 'quota:quota_view' %}"><span class="ion ion-ios-arrow-round-forward me-2"></span>Qabul</a></li>
+                        <li><a href="{% url 'home:contact' %}"><span class="ion ion-ios-arrow-round-forward me-2"></span>Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">So'ngi yangiliklar</h2>
+                    {% for i in latest_blog %}
+                        <div class="block-21 mb-4 d-flex">
+                        <a class="blog-img img rounded" href="{% url 'news:detail' i.slug %}#blog_detail" style="background-image: url('{{ i.image.url }}');"></a>
+                        <div class="text">
+                            <div class="meta">
+                                <div><a href="#"><span class="fa fa-calendar"></span>{{ i.created_at|date:"M.d.Y" }}</a></div>
+                                <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
+                            </div>
+                            <h3 class="heading"><a href="{% url 'news:detail' i.slug %}#blog_detail">{{ i.title }}</a></h3>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-6 col-lg">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Manzil</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon fa fa-map marker"></span><span class="text">
+                                Vohid Abdullayev ko'chasi, 14-uy. Samarqand sh.</span>
+                            </li>
+                            <li><a href="#"><span class="icon fa fa-phone"></span><span
+                                    class="text">+998 66 232 23 58</span></a></li>
+<!--                            <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text"><span-->
+<!--                                    class="__cf_email__" data-cfemail="771e191118370e18020513181a161e195914181a">[email&#160;protected]</span></span></a>-->
+<!--                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid px-0 py-5 bg-darken">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0" style="font-size: 14px;">Copyright &copy;<script data-cfasync="false"
+                                                                                     src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                        <script>document.write(new Date().getFullYear());</script>
+                        All rights reserved | This template is made with <i class="fa fa-heart color-danger"
+                                                                            aria-hidden="true"></i> by <a
+                                href="https://colorlib.com/" target="_blank" rel="nofollow noopener">Colorlib</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
